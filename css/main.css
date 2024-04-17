@@ -1,0 +1,321 @@
+/* Changes: Added CSS for Input Form */
+
+/* Desktop CSS */
+@font-face {
+    font-family: myfont;
+    src: url("..\fonts/Oswald-Regular.ttf");
+}
+
+/* Title, Body and Sidebar */
+figcaption {
+    color: white;
+    font-family: 'Arial';
+    font-size: 10px;
+    text-align: center;
+}
+
+.sidebar {
+    grid-area: bar;
+    background-color: rgb(155, 152, 152);
+    height: 560px;
+}
+
+.page {
+    grid-area: main;
+    background-color: black;
+    border: none;
+}
+
+.title {
+    grid-area: title;
+    height: 75px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: myfont, 'Arial';
+    font-size: 60px;
+    color: white;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.link {
+    font-family: myfont, 'Arial';
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.band-name {
+    text-align: center;
+    margin: -8px;
+    padding: 0px;
+    font-family: myfont, 'Arial';
+    font-size: 60px;
+    letter-spacing: 40px;
+    color: black;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.nav-button {
+    font-family: 'Arial';
+    margin: 20px;
+    cursor: default;
+}
+
+.nav-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Footer */
+.foot {
+    grid-area: foot;
+    color: black;
+    height: 30px;
+    background-color: transparent;
+    font-family: 'Arial';
+    font-size: 10px;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+/* Different Pages */
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+        'title title title title title title'
+        'bar main main main main main'
+        'foot foot foot foot foot foot';
+    padding: 10px;
+    row-gap: 10px;
+    margin: 10px;
+}
+
+#page-home {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#page-live {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#page-music {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding-top: 65px;
+}
+
+#page-form {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding-top: 35px;
+}
+
+video {
+    width: 250px;
+}
+
+#page-links {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding-top: 40px;
+    text-align: right;
+    font-size: 50px;
+}
+
+.img1 {
+    grid-area: img1;
+    width: 200px;
+    height: 260px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+}
+
+.img2 {
+    grid-area: img2;
+    width: 370px;
+    height: 260px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+}
+
+.img3 {
+    grid-area: img3;
+    width: 220px;
+    height: 260px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+}
+
+.img4 {
+    width: 400px;
+    height: 260px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+}
+
+table {
+    color: white;
+    font-family: 'Arial';
+    margin: 42px;
+    width: 500px;
+    border: 2px solid white;
+    text-align: left;
+}
+
+.top {
+    border-bottom: 2px solid white;
+}
+
+.img5 {
+    width: 200px;
+    height: 260px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+}
+
+.img6 {
+    width: 500px;
+    height: 360px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+}
+
+/* CSS for input form */
+.container {
+    text-align: left;
+    padding: 10px;
+    color: white;
+    border: 1px solid whitesmoke;
+    font-family: 'Arial';
+}
+
+.container > h1 {
+    text-align: center;
+}
+  
+.errorMsg {
+    color: red;
+}
+
+input.was-validated:invalid {
+    color: red;
+    border: 1px solid red;
+}
+  
+input.was-validated:invalid ~ div {
+    display: block;
+}
+
+input:valid ~ div {
+    display: none;
+}
+  
+input:invalid ~ div {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile Device CSS */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-areas: 
+            'title title'
+            'bar bar'
+            'main main'
+            'main main'
+            'main main'
+            'foot foot';
+    }
+
+    .band-name {
+        font-size: 30px;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+    }
+
+    .sidebar > section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-button > h2 {
+        text-align: right;
+    }
+
+    #page-music {
+        flex-direction: column;
+        row-gap: 20px;
+        padding-bottom: 65px;
+    }
+
+    #page-links {
+        flex-direction: column;
+        padding-top: 65px;
+        padding-bottom: 65px;
+        row-gap: 20px;
+    }
+
+    .img6 {
+        width: 300px;
+        height: 200px;
+    }
+
+    .img2 {
+        width: 270px;
+        height: 160px;
+    }
+
+    .img4 {
+        width: 270px;
+        height: 130px;
+    }
+
+    table {
+        width: 270px;
+    }
+
+}

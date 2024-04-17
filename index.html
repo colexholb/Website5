@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+ 
+Project:  Project5-Personal Web Site-Visitor Form Validation
+Name: Cole Holbrook
+Submitted: 4/17/2024
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that  If I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+Reflection (1-2 paragraphs): 
+
+This project challenged me to write input validation using javascript which I had never done before. It was a good learning experience
+as it took quite a bit of time to research how to correctly do everything. I think this was a solid final project for this class. 
+I like the theme of each project building off of each other because it pushes you to do a better job. 
+ 
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Young Decay</title>
+        <link rel="stylesheet" href="css/main.css"/>
+        <script src="js/main.js"></script>
+        <script src="js/validate.js"></script>
+    </head>
+    <body>
+        <section class="wrapper">
+            <header class="title"><h1 class="band-name">Young Decay</h1></header>
+            <nav class="sidebar">
+                <section>
+                    <div class="nav-button" onclick="showHome()"><h2>Home</h2></div>
+                    <div class="nav-button" onclick="showLive()"><h2>Live</h2></div>
+                    <div class="nav-button" onclick="showMusic()"><h2>Music</h2></div>
+                    <div class="nav-button" onclick="showLinks()"><h2>Links</h2></div>
+                    <div class="nav-button" onclick="showForm()"><h2>Log Visit</h2></div>
+                    <div class="nav-button" onclick="toggleTheme()"><h2>Toggle Theme</h2></div>
+                </section>
+            </nav>
+            <div class="page">
+
+                <section id="page-home">
+                    <img class="img1" src="img/josh2.jpg" alt="josh">
+                    <figure>
+                        <img class="img2" src="img/zach3.jpg" alt="zach">
+                        <figcaption>@ Velour 2023</figcaption>
+                    </figure>
+                    <img class="img3" src="img/cole3.jpg" alt="cole">
+                </section>
+
+                <section id="page-live">
+                    <img class="img4" src="img/zach4.jpg" alt="band">
+                    <table>
+                        <tr>
+                          <th class="top">Venue</th>
+                          <th class="top">Date</th>
+                          <th class="top">Time</th>
+                        </tr>
+                        <tr>
+                          <td>The Hive</td>
+                          <td>4/15/2024</td>
+                          <td>7:00pm</td>
+                        </tr>
+                        <tr>
+                          <td>Velour</td>
+                          <td>3/21/2024</td>
+                          <td>8:00pm</td>
+                        </tr>
+                      </table>
+                </section>
+
+                <section id="page-music">
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5Gr2vi0ubGiF66TDw1zsRi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <video controls src="img/vid.mp4" autoplay alt="Video"></video>
+                </section>
+
+                <section id="page-links">
+                    <div>
+                        <ul>
+                        <li><a href="https://www.instagram.com/youngdecayofficial/" class="link">Instagram</a></li>
+                        <li><a href="https://open.spotify.com/artist/5Gr2vi0ubGiF66TDw1zsRi?si=quQ2yZ2-QtGO3-3N3phv3Q" class="link">Spotify</a></li>
+                    </ul>
+                    </div>
+                    <img class="img5" src="img/zach1.jpg" alt="zach">
+                    <img class="img6" src="img/zach5.jpg" alt="zach">
+                </section>
+
+                <section id="page-form">
+                    <div class="container">
+                        <h1>Visitor Form</h1>
+                        <div id="success" class="successMsg" style="display:none">
+                          Thank you for logging your visit!
+                        </div>
+                        <form id="myform" novalidate method="GET" action="https://wp.zybooks.com/form-viewer.php">
+                            <ul class="flex">
+                                <li class="section-display">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li >
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text"  id="last-name" name="last-name" placeholder="Enter your last name here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li >
+                                    <label for="address">Address</label>
+                                    <input type="text"  id="address" name="address" placeholder="Enter your address here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li >
+                                    <label for="city">City</label>
+                                    <input type="text"  id="city" name="city" placeholder="Enter your city here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li >
+                                    <label for="state">State</label>
+                                    <input type="text"  id="state" name="state" placeholder="Enter your state here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li >
+                                    <label for="zip">Zip</label>
+                                    <input type="text"  id="zip" name="zip" placeholder="Enter your zip code here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li >
+                                    <label for="email">Email</label>
+                                    <input type="text" id="email" name="email" placeholder="Enter your email here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li>
+                                    <label for="phone">Phone</label>
+                                    <input type="text" id="phone" placeholder="Enter your phone here">
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li>
+                                    <h2>How did you find my page</h2>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id='google' name='find-page' value="google">
+                                    <label for="google">Google Search</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id='friend' name='find-page' value="friend">
+                                    <label for="friend">Friend</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id='newspaper' name='find-page' value="newspaper">
+                                    <label for="newspaper">News Paper</label>
+                                    <div class="errorMsg"></div>
+                                </li>
+                                <li>
+                                    <label for="comment">Comments</label>
+                                    <textarea rows="4" id="comment" placeholder="Enter your comments here"></textarea>
+                                </li>
+                                <li>
+                                    <button onclick="checkForm()">Send</button>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+            <footer class="foot">
+                <p>Young Decay 2024</p>
+            </footer>
+        </section>
+    </body>
+</html>
